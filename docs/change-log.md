@@ -11,3 +11,4 @@
   - 异常 fail-open
 - 新增 popup/options 用于配置与控制。
 - 新增本地门禁脚本：`check`、`test`、`build`、`gate`。
+- 根据项目决策，性能基线实测暂缓，不纳入当前里程碑门禁。
