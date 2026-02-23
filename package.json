@@ -1,0 +1,13 @@
+{
+  "name": "smoothscroll-gpt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Safari ChatGPT 长对话 DOM 虚拟化扩展",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/test.mjs",
+    "build": "node scripts/build.mjs",
+    "gate": "npm run check && npm run test && npm run build"
+  }
+}

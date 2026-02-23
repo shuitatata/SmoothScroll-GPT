@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "SmoothScroll GPT",
+  "description": "通过 DOM 虚拟化降低 ChatGPT 超长对话卡顿。",
+  "version": "0.1.0",
+  "permissions": ["storage", "tabs", "activeTab"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "SmoothScroll GPT",
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "shared/config.js",
+        "shared/runtime.js",
+        "shared/windowing.js",
+        "content-script.js"
+      ],
+      "css": ["styles/virtualizer.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
