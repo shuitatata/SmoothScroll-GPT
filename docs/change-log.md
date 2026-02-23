@@ -19,3 +19,4 @@
 - 生成并落地 macOS Safari 宿主工程：`safari-app/SmoothScroll GPT/SmoothScroll GPT.xcodeproj`。
 - 更新 README 体验步骤，支持从构建产物一键转换到可运行工程。
 - 为 `manifest.json` 增加扩展图标并移除 `open_in_tab`，消除 Safari 转换警告。
+- 修复 Xcode 运行报错：统一宿主 App 与扩展的 Bundle Identifier 前缀，并在转换脚本中加入自动修正逻辑。
