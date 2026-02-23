@@ -34,6 +34,8 @@
 ### VirtualizerStats
 - `mountedCount`
 - `trimmedCount`
+- `totalMessageCount`
+- `maxMountedMessages`
 - `estimatedNodeCount`
 - `avgFrameDeltaMs`
 - `lastError`

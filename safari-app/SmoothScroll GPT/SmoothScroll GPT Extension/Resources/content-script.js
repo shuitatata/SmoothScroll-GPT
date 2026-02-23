@@ -380,7 +380,7 @@
       };
     }
 
-    isProtectedRecord(index, total) {
+    isProtectedRecord(index, total, ordered) {
       if (index >= total - this.config.preserveTailCount) {
         return true;
       }
@@ -390,7 +390,6 @@
         return false;
       }
 
-      const ordered = this.getFlowRecords();
       const item = ordered[index];
       if (!item) {
         return false;
@@ -411,6 +410,8 @@
 
       this.stats.estimatedNodeCount = this.container.getElementsByTagName("*").length;
       this.stats.lastUpdateAt = Date.now();
+      this.stats.totalMessageCount = total;
+      this.stats.maxMountedMessages = this.config.maxMountedMessages;
 
       if (total === 0) {
         return;
@@ -442,24 +443,56 @@
       const anchorNodeBefore = ordered[anchorIndex] ? ordered[anchorIndex].flowNode : null;
       const anchorTopBefore = anchorNodeBefore ? anchorNodeBefore.getBoundingClientRect().top : 0;
 
-      let mountedCount = 0;
+      const keepIndices = new Set(desired);
       for (let index = 0; index < ordered.length; index += 1) {
-        const item = ordered[index];
-        const shouldKeep = desired.has(index) || this.isProtectedRecord(index, total);
+        if (this.isProtectedRecord(index, total, ordered)) {
+          keepIndices.add(index);
+        }
+      }
 
-        if (shouldKeep) {
+      if (total <= this.config.maxMountedMessages) {
+        for (const item of ordered) {
           this.restoreRecord(item.record);
-          mountedCount += 1;
-          continue;
+        }
+      } else {
+        if (keepIndices.size < this.config.maxMountedMessages) {
+          const candidates = [];
+          for (let index = 0; index < ordered.length; index += 1) {
+            if (keepIndices.has(index)) {
+              continue;
+            }
+
+            let distance = 0;
+            if (index < visibleRange.firstVisible) {
+              distance = visibleRange.firstVisible - index;
+            } else if (index > visibleRange.lastVisible) {
+              distance = index - visibleRange.lastVisible;
+            }
+
+            candidates.push({ index, distance });
+          }
+
+          candidates.sort((a, b) => {
+            if (a.distance !== b.distance) {
+              return a.distance - b.distance;
+            }
+            return a.index - b.index;
+          });
+
+          const allowance = this.config.maxMountedMessages - keepIndices.size;
+          for (let i = 0; i < allowance && i < candidates.length; i += 1) {
+            keepIndices.add(candidates[i].index);
+          }
         }
 
-        if (mountedCount >= this.config.maxMountedMessages) {
-          this.trimRecord(item.record);
-          continue;
+        for (let index = 0; index < ordered.length; index += 1) {
+          const item = ordered[index];
+          if (keepIndices.has(index)) {
+            this.restoreRecord(item.record);
+          } else {
+            this.trimRecord(item.record);
+          }
         }
-
-        this.restoreRecord(item.record);
-        mountedCount += 1;
       }
 
       if (anchorNodeBefore && anchorNodeBefore.isConnected) {

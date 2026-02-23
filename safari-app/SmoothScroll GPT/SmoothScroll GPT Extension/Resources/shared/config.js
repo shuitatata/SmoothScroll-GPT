@@ -58,6 +58,8 @@
     return {
       mountedCount: 0,
       trimmedCount: 0,
+      totalMessageCount: 0,
+      maxMountedMessages: DEFAULT_CONFIG.maxMountedMessages,
       estimatedNodeCount: 0,
       avgFrameDeltaMs: 0,
       lastError: "",
