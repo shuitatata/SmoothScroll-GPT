@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmoothScroll GPT 设置</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <h1>SmoothScroll GPT - 高级设置</h1>
+        <p>建议先保持默认值，遇到卡顿再逐步调整。</p>
+      </header>
+
+      <section class="card">
+        <label>
+          <span>启用虚拟化</span>
+          <input id="enabled" type="checkbox" />
+        </label>
+
+        <label>
+          <span>最大挂载消息数（40-120）</span>
+          <input id="maxMountedMessages" type="number" min="40" max="120" step="1" />
+        </label>
+
+        <label>
+          <span>Overscan 条数（2-20）</span>
+          <input id="overscanCount" type="number" min="2" max="20" step="1" />
+        </label>
+
+        <label>
+          <span>尾部保留条数（2-20）</span>
+          <input id="preserveTailCount" type="number" min="2" max="20" step="1" />
+        </label>
+
+        <label>
+          <span>调试模式</span>
+          <input id="debug" type="checkbox" />
+        </label>
+
+        <div class="actions">
+          <button id="save" type="button">保存</button>
+          <button id="reset" type="button" class="ghost">恢复默认值</button>
+        </div>
+
+        <p id="status"></p>
+      </section>
+    </main>
+
+    <script src="../shared/config.js"></script>
+    <script src="../shared/runtime.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

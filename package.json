@@ -8,6 +8,7 @@
     "check": "node scripts/check.mjs",
     "test": "node scripts/test.mjs",
     "build": "node scripts/build.mjs",
+    "convert:safari": "node scripts/convert-safari.mjs",
     "gate": "npm run check && npm run test && npm run build"
   }
 }

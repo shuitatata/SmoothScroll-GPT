@@ -1,0 +1,13 @@
+.ssg-placeholder {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px dashed rgba(120, 120, 120, 0.35);
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(240, 240, 240, 0.55), rgba(230, 230, 230, 0.35));
+  color: #666;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  contain: layout paint style;
+}

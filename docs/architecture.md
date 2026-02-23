@@ -49,3 +49,8 @@
 - 站点匹配：`chatgpt.com` / `chat.openai.com`。
 - 消息节点识别采用多选择器与启发式回退。
 - 若识别失败，仅输出错误并保持页面可用。
+
+## 5. Safari 工程产物
+- 宿主工程路径：`/Users/shuitata/PlayGround/SmoothScroll GPT/safari-app/SmoothScroll GPT/SmoothScroll GPT.xcodeproj`。
+- 该工程由 `safari-web-extension-converter` 生成，用于在 macOS Safari 本机运行扩展。
+- 当前采用 `--copy-resources`，工程内 `Resources` 会复制一份扩展代码，后续改动需重新执行转换命令同步。
