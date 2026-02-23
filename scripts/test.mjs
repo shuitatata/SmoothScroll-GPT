@@ -35,6 +35,11 @@ assert.equal(normalized.preserveTailCount, 2, "preserveTailCount 应被下限截
 assert.equal(normalized.enabled, true, "enabled 应转换为布尔值");
 assert.equal(normalized.debug, false, "debug 应转换为布尔值");
 
+const normalizedLowerBound = normalizeConfig({
+  maxMountedMessages: -12,
+});
+assert.equal(normalizedLowerBound.maxMountedMessages, 0, "maxMountedMessages 应允许最小值 0");
+
 const desired = computeDesiredIndices(20, { firstVisible: 8, lastVisible: 9 }, 2, 3);
 assert.equal(desired.has(6), true, "应包含可见区前的 overscan");
 assert.equal(desired.has(11), true, "应包含可见区后的 overscan");

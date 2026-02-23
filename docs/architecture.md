@@ -19,7 +19,7 @@
 
 ### VirtualizerConfig
 - `enabled: boolean`
-- `maxMountedMessages: number`（40-120）
+- `maxMountedMessages: number`（0-120）
 - `overscanCount: number`
 - `preserveTailCount: number`
 - `debug: boolean`

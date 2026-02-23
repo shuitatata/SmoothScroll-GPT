@@ -60,7 +60,7 @@
 - `maxMountedMessages=80`
 - `overscanCount=8`
 - `preserveTailCount=6`
-- 配置范围：`maxMountedMessages` 40-120
+- 配置范围：`maxMountedMessages` 0-120
 
 ## 10. 提交前检查
 - 运行 `npm run gate`。

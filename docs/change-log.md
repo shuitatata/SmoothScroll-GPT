@@ -22,3 +22,4 @@
 - 修复 Xcode 运行报错：统一宿主 App 与扩展的 Bundle Identifier 前缀，并在转换脚本中加入自动修正逻辑。
 - 修复裁剪窗口策略：`maxMountedMessages` 改为严格上限导向，避免在特定视口下长期不裁剪。
 - 扩展状态新增 `totalMessageCount` 与 `maxMountedMessages`，便于判断未裁剪原因。
+- 调整配置边界：`maxMountedMessages` 下限由 40 改为 0，便于低阈值调试与实验。

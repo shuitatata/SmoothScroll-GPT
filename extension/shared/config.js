@@ -8,7 +8,7 @@
   });
 
   const LIMITS = Object.freeze({
-    minMountedMessages: 40,
+    minMountedMessages: 0,
     maxMountedMessages: 120,
     minOverscanCount: 2,
     maxOverscanCount: 20,
