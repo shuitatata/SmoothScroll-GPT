@@ -438,22 +438,29 @@
         this.config.overscanCount,
         this.config.preserveTailCount,
       );
+      this.stats.desiredKeepCount = desired.size;
 
       const anchorIndex = Math.max(0, Math.min(visibleRange.firstVisible, total - 1));
       const anchorNodeBefore = ordered[anchorIndex] ? ordered[anchorIndex].flowNode : null;
       const anchorTopBefore = anchorNodeBefore ? anchorNodeBefore.getBoundingClientRect().top : 0;
 
       const keepIndices = new Set(desired);
+      let protectedKeepCount = 0;
       for (let index = 0; index < ordered.length; index += 1) {
         if (this.isProtectedRecord(index, total, ordered)) {
+          if (!keepIndices.has(index)) {
+            protectedKeepCount += 1;
+          }
           keepIndices.add(index);
         }
       }
+      this.stats.protectedKeepCount = protectedKeepCount;
 
       if (total <= this.config.maxMountedMessages) {
         for (const item of ordered) {
           this.restoreRecord(item.record);
         }
+        this.stats.effectiveKeepCount = total;
       } else {
         if (keepIndices.size < this.config.maxMountedMessages) {
           const candidates = [];
@@ -493,6 +500,7 @@
             this.trimRecord(item.record);
           }
         }
+        this.stats.effectiveKeepCount = keepIndices.size;
       }
 
       if (anchorNodeBefore && anchorNodeBefore.isConnected) {
@@ -538,6 +546,7 @@
       record.placeholder = placeholder;
       record.element = null;
       record.state = "trimmed";
+      this.stats.cumulativeTrimOps += 1;
 
       if (this.placeholderObserver) {
         this.placeholderObserver.observe(placeholder);
@@ -561,6 +570,7 @@
       record.element = record.cachedNode;
       record.placeholder = null;
       record.state = "mounted";
+      this.stats.cumulativeRestoreOps += 1;
     }
 
     restoreAll() {

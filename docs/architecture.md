@@ -36,6 +36,11 @@
 - `trimmedCount`
 - `totalMessageCount`
 - `maxMountedMessages`
+- `desiredKeepCount`
+- `protectedKeepCount`
+- `effectiveKeepCount`
+- `cumulativeTrimOps`
+- `cumulativeRestoreOps`
 - `estimatedNodeCount`
 - `avgFrameDeltaMs`
 - `lastError`

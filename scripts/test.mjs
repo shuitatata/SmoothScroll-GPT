@@ -18,7 +18,7 @@ context.window = context;
 await loadGlobalScript(path.join(process.cwd(), "extension/shared/config.js"), context);
 await loadGlobalScript(path.join(process.cwd(), "extension/shared/windowing.js"), context);
 
-const { normalizeConfig, DEFAULT_CONFIG } = context.SSG_CONFIG;
+const { normalizeConfig, DEFAULT_CONFIG, createEmptyStats } = context.SSG_CONFIG;
 const { computeDesiredIndices } = context.SSG_WINDOWING;
 
 const normalized = normalizeConfig({
@@ -45,5 +45,10 @@ assert.equal(desired.has(6), true, "应包含可见区前的 overscan");
 assert.equal(desired.has(11), true, "应包含可见区后的 overscan");
 assert.equal(desired.has(19), true, "应包含尾部保留项");
 assert.equal(DEFAULT_CONFIG.maxMountedMessages, 80, "默认配置应保持不变");
+
+const stats = createEmptyStats();
+assert.equal(stats.cumulativeTrimOps, 0, "累计裁剪次数默认应为 0");
+assert.equal(stats.cumulativeRestoreOps, 0, "累计恢复次数默认应为 0");
+assert.equal(stats.effectiveKeepCount, 0, "有效保留数默认应为 0");
 
 console.log("测试通过：配置归一化与窗口计算逻辑正常");

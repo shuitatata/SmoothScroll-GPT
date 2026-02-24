@@ -23,3 +23,4 @@
 - 修复裁剪窗口策略：`maxMountedMessages` 改为严格上限导向，避免在特定视口下长期不裁剪。
 - 扩展状态新增 `totalMessageCount` 与 `maxMountedMessages`，便于判断未裁剪原因。
 - 调整配置边界：`maxMountedMessages` 下限由 40 改为 0，便于低阈值调试与实验。
+- 扩展状态新增窗口诊断与累计指标：`desiredKeepCount`、`protectedKeepCount`、`effectiveKeepCount`、`cumulativeTrimOps`、`cumulativeRestoreOps`。
