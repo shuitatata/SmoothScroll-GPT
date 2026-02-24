@@ -26,6 +26,7 @@ const normalized = normalizeConfig({
   overscanCount: 1,
   preserveTailCount: -10,
   enabled: 1,
+  adaptiveEnabled: 1,
   debug: 0,
 });
 
@@ -33,6 +34,7 @@ assert.equal(normalized.maxMountedMessages, 120, "maxMountedMessages 应被上�
 assert.equal(normalized.overscanCount, 2, "overscanCount 应被下限截断");
 assert.equal(normalized.preserveTailCount, 2, "preserveTailCount 应被下限截断");
 assert.equal(normalized.enabled, true, "enabled 应转换为布尔值");
+assert.equal(normalized.adaptiveEnabled, true, "adaptiveEnabled 应转换为布尔值");
 assert.equal(normalized.debug, false, "debug 应转换为布尔值");
 
 const normalizedLowerBound = normalizeConfig({
@@ -50,5 +52,7 @@ const stats = createEmptyStats();
 assert.equal(stats.cumulativeTrimOps, 0, "累计裁剪次数默认应为 0");
 assert.equal(stats.cumulativeRestoreOps, 0, "累计恢复次数默认应为 0");
 assert.equal(stats.effectiveKeepCount, 0, "有效保留数默认应为 0");
+assert.equal(stats.adaptiveEnabled, false, "自适应开关默认应为 false");
+assert.equal(stats.activeOverscanCount, DEFAULT_CONFIG.overscanCount, "生效 overscan 默认应等于配置默认值");
 
 console.log("测试通过：配置归一化与窗口计算逻辑正常");

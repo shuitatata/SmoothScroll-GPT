@@ -24,3 +24,5 @@
 - 扩展状态新增 `totalMessageCount` 与 `maxMountedMessages`，便于判断未裁剪原因。
 - 调整配置边界：`maxMountedMessages` 下限由 40 改为 0，便于低阈值调试与实验。
 - 扩展状态新增窗口诊断与累计指标：`desiredKeepCount`、`protectedKeepCount`、`effectiveKeepCount`、`cumulativeTrimOps`、`cumulativeRestoreOps`。
+- 实现 Phase F 基础版：新增 `adaptiveEnabled`，运行时根据滚动速度与帧间隔自适应调整生效的窗口参数。
+- 扩展状态新增自适应诊断字段：`activeMaxMountedMessages`、`activeOverscanCount`、`activePreserveTailCount`、`scrollVelocityPxPerMs`、`adaptiveLastReason`、`adaptiveLastAdjustAt`。

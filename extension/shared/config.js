@@ -1,6 +1,7 @@
 (function initSsgConfig(global) {
   const DEFAULT_CONFIG = Object.freeze({
     enabled: true,
+    adaptiveEnabled: false,
     maxMountedMessages: 80,
     overscanCount: 8,
     preserveTailCount: 6,
@@ -28,6 +29,7 @@
     const source = input && typeof input === "object" ? input : {};
     return {
       enabled: Boolean(source.enabled ?? DEFAULT_CONFIG.enabled),
+      adaptiveEnabled: Boolean(source.adaptiveEnabled ?? DEFAULT_CONFIG.adaptiveEnabled),
       maxMountedMessages: clampInt(
         source.maxMountedMessages,
         LIMITS.minMountedMessages,
@@ -59,12 +61,19 @@
       mountedCount: 0,
       trimmedCount: 0,
       totalMessageCount: 0,
+      adaptiveEnabled: DEFAULT_CONFIG.adaptiveEnabled,
       maxMountedMessages: DEFAULT_CONFIG.maxMountedMessages,
+      activeMaxMountedMessages: DEFAULT_CONFIG.maxMountedMessages,
+      activeOverscanCount: DEFAULT_CONFIG.overscanCount,
+      activePreserveTailCount: DEFAULT_CONFIG.preserveTailCount,
       desiredKeepCount: 0,
       protectedKeepCount: 0,
       effectiveKeepCount: 0,
       cumulativeTrimOps: 0,
       cumulativeRestoreOps: 0,
+      scrollVelocityPxPerMs: 0,
+      adaptiveLastReason: "",
+      adaptiveLastAdjustAt: 0,
       estimatedNodeCount: 0,
       avgFrameDeltaMs: 0,
       lastError: "",

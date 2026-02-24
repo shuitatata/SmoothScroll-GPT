@@ -4,7 +4,7 @@
     return;
   }
 
-  const { DEFAULT_CONFIG, mergeConfig, normalizeConfig, createEmptyStats } = SSG_CONFIG;
+  const { DEFAULT_CONFIG, LIMITS, mergeConfig, normalizeConfig, createEmptyStats } = SSG_CONFIG;
   const { COMMANDS, EVENTS, sendRuntimeMessage } = SSG_RUNTIME;
   const { computeVisibleRange, computeDesiredIndices } = SSG_WINDOWING;
 
@@ -74,6 +74,11 @@
   class DomVirtualizer {
     constructor() {
       this.config = { ...DEFAULT_CONFIG };
+      this.activeConfig = {
+        maxMountedMessages: DEFAULT_CONFIG.maxMountedMessages,
+        overscanCount: DEFAULT_CONFIG.overscanCount,
+        preserveTailCount: DEFAULT_CONFIG.preserveTailCount,
+      };
       this.container = null;
       this.scrollRoot = window;
       this.records = new Map();
@@ -85,6 +90,14 @@
       this.stats = createEmptyStats();
       this.frameSamples = [];
       this.lastFrameTs = 0;
+      this.scrollTelemetry = {
+        lastTop: 0,
+        lastTs: 0,
+        velocity: 0,
+      };
+      this.adaptiveState = {
+        lastAdjustAt: 0,
+      };
 
       this.mutationObserver = null;
       this.placeholderObserver = null;
@@ -106,12 +119,14 @@
         const response = await sendRuntimeMessage({ type: COMMANDS.GET_CONFIG });
         if (response && response.ok) {
           this.config = normalizeConfig(response.config);
+          this.resetActiveConfig();
           return;
         }
       } catch (error) {
         this.stats.lastError = `读取配置失败：${error.message}`;
       }
       this.config = { ...DEFAULT_CONFIG };
+      this.resetActiveConfig();
     }
 
     registerRuntimeListener() {
@@ -163,6 +178,7 @@
 
     setConfig(nextPatch) {
       this.config = mergeConfig(this.config, nextPatch || {});
+      this.resetActiveConfig();
       if (!this.config.enabled) {
         this.restoreAll();
       }
@@ -182,6 +198,8 @@
 
       this.container = container;
       this.scrollRoot = detectScrollableAncestor(container);
+      this.scrollTelemetry.lastTop = this.getCurrentScrollTop();
+      this.scrollTelemetry.lastTs = performance.now();
       this.bound = true;
       this.setupObservers();
       this.syncRecords();
@@ -213,6 +231,19 @@
     }
 
     onScroll() {
+      const now = performance.now();
+      const currentTop = this.getCurrentScrollTop();
+      if (this.scrollTelemetry.lastTs > 0) {
+        const deltaTs = now - this.scrollTelemetry.lastTs;
+        if (deltaTs > 0) {
+          const instantVelocity = Math.abs(currentTop - this.scrollTelemetry.lastTop) / deltaTs;
+          // 使用平滑速度估计避免偶发滚动噪声导致参数抖动。
+          this.scrollTelemetry.velocity = this.scrollTelemetry.velocity * 0.7 + instantVelocity * 0.3;
+        }
+      }
+      this.scrollTelemetry.lastTop = currentTop;
+      this.scrollTelemetry.lastTs = now;
+      this.stats.scrollVelocityPxPerMs = Number(this.scrollTelemetry.velocity.toFixed(3));
       this.scheduleUpdate();
     }
 
@@ -261,6 +292,106 @@
       };
 
       window.requestAnimationFrame(tick);
+    }
+
+    getCurrentScrollTop() {
+      if (this.scrollRoot === window) {
+        return window.scrollY || window.pageYOffset || 0;
+      }
+      return this.scrollRoot.scrollTop || 0;
+    }
+
+    resetActiveConfig() {
+      this.activeConfig.maxMountedMessages = this.config.maxMountedMessages;
+      this.activeConfig.overscanCount = this.config.overscanCount;
+      this.activeConfig.preserveTailCount = this.config.preserveTailCount;
+      this.adaptiveState.lastAdjustAt = 0;
+      this.syncAdaptiveStats("manual-reset");
+    }
+
+    syncAdaptiveStats(reason) {
+      this.stats.adaptiveEnabled = this.config.adaptiveEnabled;
+      this.stats.activeMaxMountedMessages = this.activeConfig.maxMountedMessages;
+      this.stats.activeOverscanCount = this.activeConfig.overscanCount;
+      this.stats.activePreserveTailCount = this.activeConfig.preserveTailCount;
+      this.stats.adaptiveLastReason = reason || this.stats.adaptiveLastReason;
+      this.stats.adaptiveLastAdjustAt = this.adaptiveState.lastAdjustAt;
+    }
+
+    applyAdaptiveTuning(total) {
+      if (!this.config.adaptiveEnabled) {
+        this.activeConfig.maxMountedMessages = this.config.maxMountedMessages;
+        this.activeConfig.overscanCount = this.config.overscanCount;
+        this.activeConfig.preserveTailCount = this.config.preserveTailCount;
+        this.syncAdaptiveStats("manual");
+        return;
+      }
+
+      const now = Date.now();
+      const adaptiveIntervalMs = 1200;
+      if (now - this.adaptiveState.lastAdjustAt < adaptiveIntervalMs) {
+        this.syncAdaptiveStats("adaptive-hold");
+        return;
+      }
+
+      const frameDelta = this.stats.avgFrameDeltaMs || 16.67;
+      const velocity = this.scrollTelemetry.velocity || 0;
+      let nextMaxMounted = this.activeConfig.maxMountedMessages;
+      let nextOverscan = this.activeConfig.overscanCount;
+      let nextPreserveTail = this.config.preserveTailCount;
+      let reason = "adaptive-steady";
+
+      const maxMountedCeiling = this.config.maxMountedMessages;
+      if (frameDelta >= 24) {
+        const drop = nextMaxMounted > 60 ? 6 : 3;
+        nextMaxMounted = Math.max(0, nextMaxMounted - drop);
+        reason = "adaptive-frame-critical";
+      } else if (frameDelta >= 20) {
+        nextMaxMounted = Math.max(0, nextMaxMounted - 2);
+        reason = "adaptive-frame-high";
+      } else if (frameDelta <= 14 && nextMaxMounted < maxMountedCeiling) {
+        nextMaxMounted = Math.min(maxMountedCeiling, nextMaxMounted + 1);
+        reason = "adaptive-frame-low";
+      }
+
+      if (velocity >= 2.2) {
+        nextOverscan = Math.min(LIMITS.maxOverscanCount, this.config.overscanCount + 4);
+        reason = "adaptive-fast-scroll";
+      } else if (velocity >= 1.2) {
+        nextOverscan = Math.min(LIMITS.maxOverscanCount, this.config.overscanCount + 2);
+        reason = "adaptive-medium-scroll";
+      } else if (frameDelta >= 22) {
+        nextOverscan = Math.max(LIMITS.minOverscanCount, this.config.overscanCount - 1);
+      } else {
+        nextOverscan = this.config.overscanCount;
+      }
+
+      if (document.activeElement && this.container && this.container.contains(document.activeElement)) {
+        nextPreserveTail = Math.max(this.config.preserveTailCount, 4);
+      }
+
+      if (total <= 12) {
+        nextMaxMounted = Math.min(nextMaxMounted, Math.max(0, total - 2));
+      }
+
+      nextMaxMounted = Math.min(maxMountedCeiling, Math.max(0, nextMaxMounted));
+      nextOverscan = Math.min(LIMITS.maxOverscanCount, Math.max(LIMITS.minOverscanCount, nextOverscan));
+      nextPreserveTail = Math.min(
+        LIMITS.maxPreserveTailCount,
+        Math.max(LIMITS.minPreserveTailCount, nextPreserveTail),
+      );
+
+      const changed =
+        nextMaxMounted !== this.activeConfig.maxMountedMessages ||
+        nextOverscan !== this.activeConfig.overscanCount ||
+        nextPreserveTail !== this.activeConfig.preserveTailCount;
+      if (changed) {
+        this.activeConfig.maxMountedMessages = nextMaxMounted;
+        this.activeConfig.overscanCount = nextOverscan;
+        this.activeConfig.preserveTailCount = nextPreserveTail;
+        this.adaptiveState.lastAdjustAt = now;
+      }
+      this.syncAdaptiveStats(changed ? reason : "adaptive-nochange");
     }
 
     getStats() {
@@ -381,7 +512,7 @@
     }
 
     isProtectedRecord(index, total, ordered) {
-      if (index >= total - this.config.preserveTailCount) {
+      if (index >= total - this.activeConfig.preserveTailCount) {
         return true;
       }
 
@@ -419,8 +550,14 @@
 
       if (!this.config.enabled) {
         this.restoreAll();
+        this.syncAdaptiveStats("disabled");
         return;
       }
+
+      this.applyAdaptiveTuning(total);
+      const runtimeMaxMounted = this.activeConfig.maxMountedMessages;
+      const runtimeOverscan = this.activeConfig.overscanCount;
+      const runtimePreserveTail = this.activeConfig.preserveTailCount;
 
       const viewport = this.computeViewport();
       const layouts = ordered.map((entry) => {
@@ -435,8 +572,8 @@
       const desired = computeDesiredIndices(
         total,
         visibleRange,
-        this.config.overscanCount,
-        this.config.preserveTailCount,
+        runtimeOverscan,
+        runtimePreserveTail,
       );
       this.stats.desiredKeepCount = desired.size;
 
@@ -456,13 +593,13 @@
       }
       this.stats.protectedKeepCount = protectedKeepCount;
 
-      if (total <= this.config.maxMountedMessages) {
+      if (total <= runtimeMaxMounted) {
         for (const item of ordered) {
           this.restoreRecord(item.record);
         }
         this.stats.effectiveKeepCount = total;
       } else {
-        if (keepIndices.size < this.config.maxMountedMessages) {
+        if (keepIndices.size < runtimeMaxMounted) {
           const candidates = [];
           for (let index = 0; index < ordered.length; index += 1) {
             if (keepIndices.has(index)) {
@@ -486,7 +623,7 @@
             return a.index - b.index;
           });
 
-          const allowance = this.config.maxMountedMessages - keepIndices.size;
+          const allowance = runtimeMaxMounted - keepIndices.size;
           for (let i = 0; i < allowance && i < candidates.length; i += 1) {
             keepIndices.add(candidates[i].index);
           }

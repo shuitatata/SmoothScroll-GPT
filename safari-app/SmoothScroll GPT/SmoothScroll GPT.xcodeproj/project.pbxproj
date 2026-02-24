@@ -7,44 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		538137302F4D9C260086CAF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381372F2F4D9C260086CAF7 /* AppDelegate.swift */; };
-		538137342F4D9C260086CAF7 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 538137322F4D9C260086CAF7 /* Main.html */; };
-		538137362F4D9C260086CAF7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 538137352F4D9C260086CAF7 /* Icon.png */; };
-		538137382F4D9C260086CAF7 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 538137372F4D9C260086CAF7 /* Style.css */; };
-		5381373A2F4D9C260086CAF7 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 538137392F4D9C260086CAF7 /* Script.js */; };
-		5381373C2F4D9C260086CAF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381373B2F4D9C260086CAF7 /* ViewController.swift */; };
-		5381373F2F4D9C260086CAF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5381373D2F4D9C260086CAF7 /* Main.storyboard */; };
-		538137412F4D9C270086CAF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 538137402F4D9C270086CAF7 /* Assets.xcassets */; };
-		538137482F4D9C270086CAF7 /* SmoothScroll GPT Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 538137472F4D9C270086CAF7 /* SmoothScroll GPT Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5381374D2F4D9C270086CAF7 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381374C2F4D9C270086CAF7 /* SafariWebExtensionHandler.swift */; };
-		538137612F4D9C270086CAF7 /* options in Resources */ = {isa = PBXBuildFile; fileRef = 538137592F4D9C270086CAF7 /* options */; };
-		538137622F4D9C270086CAF7 /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 5381375A2F4D9C270086CAF7 /* popup */; };
-		538137632F4D9C270086CAF7 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5381375B2F4D9C270086CAF7 /* background.js */; };
-		538137642F4D9C270086CAF7 /* shared in Resources */ = {isa = PBXBuildFile; fileRef = 5381375C2F4D9C270086CAF7 /* shared */; };
-		538137652F4D9C270086CAF7 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 5381375D2F4D9C270086CAF7 /* styles */; };
-		538137662F4D9C270086CAF7 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5381375E2F4D9C270086CAF7 /* icons */; };
-		538137672F4D9C270086CAF7 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5381375F2F4D9C270086CAF7 /* manifest.json */; };
-		538137682F4D9C270086CAF7 /* content-script.js in Resources */ = {isa = PBXBuildFile; fileRef = 538137602F4D9C270086CAF7 /* content-script.js */; };
+		5327B1B92F4DA52400BF1465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5327B1B82F4DA52400BF1465 /* AppDelegate.swift */; };
+		5327B1BD2F4DA52400BF1465 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1BB2F4DA52400BF1465 /* Main.html */; };
+		5327B1BF2F4DA52400BF1465 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1BE2F4DA52400BF1465 /* Icon.png */; };
+		5327B1C12F4DA52400BF1465 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1C02F4DA52400BF1465 /* Style.css */; };
+		5327B1C32F4DA52400BF1465 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1C22F4DA52400BF1465 /* Script.js */; };
+		5327B1C52F4DA52400BF1465 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5327B1C42F4DA52400BF1465 /* ViewController.swift */; };
+		5327B1C82F4DA52400BF1465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1C62F4DA52400BF1465 /* Main.storyboard */; };
+		5327B1CA2F4DA52400BF1465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1C92F4DA52400BF1465 /* Assets.xcassets */; };
+		5327B1D12F4DA52400BF1465 /* SmoothScroll GPT Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5327B1D02F4DA52400BF1465 /* SmoothScroll GPT Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5327B1D62F4DA52400BF1465 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5327B1D52F4DA52400BF1465 /* SafariWebExtensionHandler.swift */; };
+		5327B1EA2F4DA52400BF1465 /* options in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1E22F4DA52400BF1465 /* options */; };
+		5327B1EB2F4DA52400BF1465 /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1E32F4DA52400BF1465 /* popup */; };
+		5327B1EC2F4DA52400BF1465 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1E42F4DA52400BF1465 /* background.js */; };
+		5327B1ED2F4DA52400BF1465 /* shared in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1E52F4DA52400BF1465 /* shared */; };
+		5327B1EE2F4DA52400BF1465 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1E62F4DA52400BF1465 /* styles */; };
+		5327B1EF2F4DA52400BF1465 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1E72F4DA52400BF1465 /* icons */; };
+		5327B1F02F4DA52400BF1465 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1E82F4DA52400BF1465 /* manifest.json */; };
+		5327B1F12F4DA52400BF1465 /* content-script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5327B1E92F4DA52400BF1465 /* content-script.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		538137492F4D9C270086CAF7 /* PBXContainerItemProxy */ = {
+		5327B1D22F4DA52400BF1465 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 538137242F4D9C260086CAF7 /* Project object */;
+			containerPortal = 5327B1AD2F4DA52400BF1465 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 538137462F4D9C270086CAF7;
+			remoteGlobalIDString = 5327B1CF2F4DA52400BF1465;
 			remoteInfo = "SmoothScroll GPT Extension";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		538137542F4D9C270086CAF7 /* Embed Foundation Extensions */ = {
+		5327B1DD2F4DA52400BF1465 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				538137482F4D9C270086CAF7 /* SmoothScroll GPT Extension.appex in Embed Foundation Extensions */,
+				5327B1D12F4DA52400BF1465 /* SmoothScroll GPT Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,38 +52,38 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5381372C2F4D9C260086CAF7 /* SmoothScroll GPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmoothScroll GPT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5381372F2F4D9C260086CAF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		538137332F4D9C260086CAF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
-		538137352F4D9C260086CAF7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		538137372F4D9C260086CAF7 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		538137392F4D9C260086CAF7 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		5381373B2F4D9C260086CAF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5381373E2F4D9C260086CAF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		538137402F4D9C270086CAF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		538137422F4D9C270086CAF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		538137472F4D9C270086CAF7 /* SmoothScroll GPT Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SmoothScroll GPT Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5381374C2F4D9C270086CAF7 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		5381374E2F4D9C270086CAF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		538137592F4D9C270086CAF7 /* options */ = {isa = PBXFileReference; lastKnownFileType = folder; name = options; path = Resources/options; sourceTree = "<group>"; };
-		5381375A2F4D9C270086CAF7 /* popup */ = {isa = PBXFileReference; lastKnownFileType = folder; name = popup; path = Resources/popup; sourceTree = "<group>"; };
-		5381375B2F4D9C270086CAF7 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = Resources/background.js; sourceTree = "<group>"; };
-		5381375C2F4D9C270086CAF7 /* shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shared; path = Resources/shared; sourceTree = "<group>"; };
-		5381375D2F4D9C270086CAF7 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = Resources/styles; sourceTree = "<group>"; };
-		5381375E2F4D9C270086CAF7 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
-		5381375F2F4D9C270086CAF7 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
-		538137602F4D9C270086CAF7 /* content-script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "content-script.js"; path = "Resources/content-script.js"; sourceTree = "<group>"; };
+		5327B1B52F4DA52400BF1465 /* SmoothScroll GPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmoothScroll GPT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5327B1B82F4DA52400BF1465 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5327B1BC2F4DA52400BF1465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		5327B1BE2F4DA52400BF1465 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		5327B1C02F4DA52400BF1465 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		5327B1C22F4DA52400BF1465 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		5327B1C42F4DA52400BF1465 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5327B1C72F4DA52400BF1465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5327B1C92F4DA52400BF1465 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5327B1CB2F4DA52400BF1465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5327B1D02F4DA52400BF1465 /* SmoothScroll GPT Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SmoothScroll GPT Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5327B1D52F4DA52400BF1465 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		5327B1D72F4DA52400BF1465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5327B1E22F4DA52400BF1465 /* options */ = {isa = PBXFileReference; lastKnownFileType = folder; name = options; path = Resources/options; sourceTree = "<group>"; };
+		5327B1E32F4DA52400BF1465 /* popup */ = {isa = PBXFileReference; lastKnownFileType = folder; name = popup; path = Resources/popup; sourceTree = "<group>"; };
+		5327B1E42F4DA52400BF1465 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = Resources/background.js; sourceTree = "<group>"; };
+		5327B1E52F4DA52400BF1465 /* shared */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shared; path = Resources/shared; sourceTree = "<group>"; };
+		5327B1E62F4DA52400BF1465 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = Resources/styles; sourceTree = "<group>"; };
+		5327B1E72F4DA52400BF1465 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
+		5327B1E82F4DA52400BF1465 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+		5327B1E92F4DA52400BF1465 /* content-script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "content-script.js"; path = "Resources/content-script.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		538137292F4D9C260086CAF7 /* Frameworks */ = {
+		5327B1B22F4DA52400BF1465 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		538137442F4D9C270086CAF7 /* Frameworks */ = {
+		5327B1CD2F4DA52400BF1465 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,69 +93,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		538137232F4D9C260086CAF7 = {
+		5327B1AC2F4DA52400BF1465 = {
 			isa = PBXGroup;
 			children = (
-				5381372E2F4D9C260086CAF7 /* SmoothScroll GPT */,
-				5381374B2F4D9C270086CAF7 /* SmoothScroll GPT Extension */,
-				5381372D2F4D9C260086CAF7 /* Products */,
+				5327B1B72F4DA52400BF1465 /* SmoothScroll GPT */,
+				5327B1D42F4DA52400BF1465 /* SmoothScroll GPT Extension */,
+				5327B1B62F4DA52400BF1465 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5381372D2F4D9C260086CAF7 /* Products */ = {
+		5327B1B62F4DA52400BF1465 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5381372C2F4D9C260086CAF7 /* SmoothScroll GPT.app */,
-				538137472F4D9C270086CAF7 /* SmoothScroll GPT Extension.appex */,
+				5327B1B52F4DA52400BF1465 /* SmoothScroll GPT.app */,
+				5327B1D02F4DA52400BF1465 /* SmoothScroll GPT Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5381372E2F4D9C260086CAF7 /* SmoothScroll GPT */ = {
+		5327B1B72F4DA52400BF1465 /* SmoothScroll GPT */ = {
 			isa = PBXGroup;
 			children = (
-				5381372F2F4D9C260086CAF7 /* AppDelegate.swift */,
-				5381373B2F4D9C260086CAF7 /* ViewController.swift */,
-				5381373D2F4D9C260086CAF7 /* Main.storyboard */,
-				538137402F4D9C270086CAF7 /* Assets.xcassets */,
-				538137422F4D9C270086CAF7 /* Info.plist */,
-				538137312F4D9C260086CAF7 /* Resources */,
+				5327B1B82F4DA52400BF1465 /* AppDelegate.swift */,
+				5327B1C42F4DA52400BF1465 /* ViewController.swift */,
+				5327B1C62F4DA52400BF1465 /* Main.storyboard */,
+				5327B1C92F4DA52400BF1465 /* Assets.xcassets */,
+				5327B1CB2F4DA52400BF1465 /* Info.plist */,
+				5327B1BA2F4DA52400BF1465 /* Resources */,
 			);
 			path = "SmoothScroll GPT";
 			sourceTree = "<group>";
 		};
-		538137312F4D9C260086CAF7 /* Resources */ = {
+		5327B1BA2F4DA52400BF1465 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				538137322F4D9C260086CAF7 /* Main.html */,
-				538137352F4D9C260086CAF7 /* Icon.png */,
-				538137372F4D9C260086CAF7 /* Style.css */,
-				538137392F4D9C260086CAF7 /* Script.js */,
+				5327B1BB2F4DA52400BF1465 /* Main.html */,
+				5327B1BE2F4DA52400BF1465 /* Icon.png */,
+				5327B1C02F4DA52400BF1465 /* Style.css */,
+				5327B1C22F4DA52400BF1465 /* Script.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		5381374B2F4D9C270086CAF7 /* SmoothScroll GPT Extension */ = {
+		5327B1D42F4DA52400BF1465 /* SmoothScroll GPT Extension */ = {
 			isa = PBXGroup;
 			children = (
-				538137582F4D9C270086CAF7 /* Resources */,
-				5381374C2F4D9C270086CAF7 /* SafariWebExtensionHandler.swift */,
-				5381374E2F4D9C270086CAF7 /* Info.plist */,
+				5327B1E12F4DA52400BF1465 /* Resources */,
+				5327B1D52F4DA52400BF1465 /* SafariWebExtensionHandler.swift */,
+				5327B1D72F4DA52400BF1465 /* Info.plist */,
 			);
 			path = "SmoothScroll GPT Extension";
 			sourceTree = "<group>";
 		};
-		538137582F4D9C270086CAF7 /* Resources */ = {
+		5327B1E12F4DA52400BF1465 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				538137592F4D9C270086CAF7 /* options */,
-				5381375A2F4D9C270086CAF7 /* popup */,
-				5381375B2F4D9C270086CAF7 /* background.js */,
-				5381375C2F4D9C270086CAF7 /* shared */,
-				5381375D2F4D9C270086CAF7 /* styles */,
-				5381375E2F4D9C270086CAF7 /* icons */,
-				5381375F2F4D9C270086CAF7 /* manifest.json */,
-				538137602F4D9C270086CAF7 /* content-script.js */,
+				5327B1E22F4DA52400BF1465 /* options */,
+				5327B1E32F4DA52400BF1465 /* popup */,
+				5327B1E42F4DA52400BF1465 /* background.js */,
+				5327B1E52F4DA52400BF1465 /* shared */,
+				5327B1E62F4DA52400BF1465 /* styles */,
+				5327B1E72F4DA52400BF1465 /* icons */,
+				5327B1E82F4DA52400BF1465 /* manifest.json */,
+				5327B1E92F4DA52400BF1465 /* content-script.js */,
 			);
 			name = Resources;
 			path = "SmoothScroll GPT Extension";
@@ -164,34 +164,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5381372B2F4D9C260086CAF7 /* SmoothScroll GPT */ = {
+		5327B1B42F4DA52400BF1465 /* SmoothScroll GPT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 538137552F4D9C270086CAF7 /* Build configuration list for PBXNativeTarget "SmoothScroll GPT" */;
+			buildConfigurationList = 5327B1DE2F4DA52400BF1465 /* Build configuration list for PBXNativeTarget "SmoothScroll GPT" */;
 			buildPhases = (
-				538137282F4D9C260086CAF7 /* Sources */,
-				538137292F4D9C260086CAF7 /* Frameworks */,
-				5381372A2F4D9C260086CAF7 /* Resources */,
-				538137542F4D9C270086CAF7 /* Embed Foundation Extensions */,
+				5327B1B12F4DA52400BF1465 /* Sources */,
+				5327B1B22F4DA52400BF1465 /* Frameworks */,
+				5327B1B32F4DA52400BF1465 /* Resources */,
+				5327B1DD2F4DA52400BF1465 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5381374A2F4D9C270086CAF7 /* PBXTargetDependency */,
+				5327B1D32F4DA52400BF1465 /* PBXTargetDependency */,
 			);
 			name = "SmoothScroll GPT";
 			packageProductDependencies = (
 			);
 			productName = "SmoothScroll GPT";
-			productReference = 5381372C2F4D9C260086CAF7 /* SmoothScroll GPT.app */;
+			productReference = 5327B1B52F4DA52400BF1465 /* SmoothScroll GPT.app */;
 			productType = "com.apple.product-type.application";
 		};
-		538137462F4D9C270086CAF7 /* SmoothScroll GPT Extension */ = {
+		5327B1CF2F4DA52400BF1465 /* SmoothScroll GPT Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 538137512F4D9C270086CAF7 /* Build configuration list for PBXNativeTarget "SmoothScroll GPT Extension" */;
+			buildConfigurationList = 5327B1DA2F4DA52400BF1465 /* Build configuration list for PBXNativeTarget "SmoothScroll GPT Extension" */;
 			buildPhases = (
-				538137432F4D9C270086CAF7 /* Sources */,
-				538137442F4D9C270086CAF7 /* Frameworks */,
-				538137452F4D9C270086CAF7 /* Resources */,
+				5327B1CC2F4DA52400BF1465 /* Sources */,
+				5327B1CD2F4DA52400BF1465 /* Frameworks */,
+				5327B1CE2F4DA52400BF1465 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -201,119 +201,119 @@
 			packageProductDependencies = (
 			);
 			productName = "SmoothScroll GPT Extension";
-			productReference = 538137472F4D9C270086CAF7 /* SmoothScroll GPT Extension.appex */;
+			productReference = 5327B1D02F4DA52400BF1465 /* SmoothScroll GPT Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		538137242F4D9C260086CAF7 /* Project object */ = {
+		5327B1AD2F4DA52400BF1465 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
-					5381372B2F4D9C260086CAF7 = {
+					5327B1B42F4DA52400BF1465 = {
 						CreatedOnToolsVersion = 26.2;
 					};
-					538137462F4D9C270086CAF7 = {
+					5327B1CF2F4DA52400BF1465 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = 538137272F4D9C260086CAF7 /* Build configuration list for PBXProject "SmoothScroll GPT" */;
+			buildConfigurationList = 5327B1B02F4DA52400BF1465 /* Build configuration list for PBXProject "SmoothScroll GPT" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 538137232F4D9C260086CAF7;
+			mainGroup = 5327B1AC2F4DA52400BF1465;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 5381372D2F4D9C260086CAF7 /* Products */;
+			productRefGroup = 5327B1B62F4DA52400BF1465 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5381372B2F4D9C260086CAF7 /* SmoothScroll GPT */,
-				538137462F4D9C270086CAF7 /* SmoothScroll GPT Extension */,
+				5327B1B42F4DA52400BF1465 /* SmoothScroll GPT */,
+				5327B1CF2F4DA52400BF1465 /* SmoothScroll GPT Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5381372A2F4D9C260086CAF7 /* Resources */ = {
+		5327B1B32F4DA52400BF1465 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				538137362F4D9C260086CAF7 /* Icon.png in Resources */,
-				5381373F2F4D9C260086CAF7 /* Main.storyboard in Resources */,
-				5381373A2F4D9C260086CAF7 /* Script.js in Resources */,
-				538137342F4D9C260086CAF7 /* Main.html in Resources */,
-				538137412F4D9C270086CAF7 /* Assets.xcassets in Resources */,
-				538137382F4D9C260086CAF7 /* Style.css in Resources */,
+				5327B1BF2F4DA52400BF1465 /* Icon.png in Resources */,
+				5327B1C82F4DA52400BF1465 /* Main.storyboard in Resources */,
+				5327B1C32F4DA52400BF1465 /* Script.js in Resources */,
+				5327B1BD2F4DA52400BF1465 /* Main.html in Resources */,
+				5327B1CA2F4DA52400BF1465 /* Assets.xcassets in Resources */,
+				5327B1C12F4DA52400BF1465 /* Style.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		538137452F4D9C270086CAF7 /* Resources */ = {
+		5327B1CE2F4DA52400BF1465 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				538137652F4D9C270086CAF7 /* styles in Resources */,
-				538137682F4D9C270086CAF7 /* content-script.js in Resources */,
-				538137672F4D9C270086CAF7 /* manifest.json in Resources */,
-				538137612F4D9C270086CAF7 /* options in Resources */,
-				538137642F4D9C270086CAF7 /* shared in Resources */,
-				538137662F4D9C270086CAF7 /* icons in Resources */,
-				538137632F4D9C270086CAF7 /* background.js in Resources */,
-				538137622F4D9C270086CAF7 /* popup in Resources */,
+				5327B1EE2F4DA52400BF1465 /* styles in Resources */,
+				5327B1F12F4DA52400BF1465 /* content-script.js in Resources */,
+				5327B1F02F4DA52400BF1465 /* manifest.json in Resources */,
+				5327B1EA2F4DA52400BF1465 /* options in Resources */,
+				5327B1ED2F4DA52400BF1465 /* shared in Resources */,
+				5327B1EF2F4DA52400BF1465 /* icons in Resources */,
+				5327B1EC2F4DA52400BF1465 /* background.js in Resources */,
+				5327B1EB2F4DA52400BF1465 /* popup in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		538137282F4D9C260086CAF7 /* Sources */ = {
+		5327B1B12F4DA52400BF1465 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5381373C2F4D9C260086CAF7 /* ViewController.swift in Sources */,
-				538137302F4D9C260086CAF7 /* AppDelegate.swift in Sources */,
+				5327B1C52F4DA52400BF1465 /* ViewController.swift in Sources */,
+				5327B1B92F4DA52400BF1465 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		538137432F4D9C270086CAF7 /* Sources */ = {
+		5327B1CC2F4DA52400BF1465 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5381374D2F4D9C270086CAF7 /* SafariWebExtensionHandler.swift in Sources */,
+				5327B1D62F4DA52400BF1465 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5381374A2F4D9C270086CAF7 /* PBXTargetDependency */ = {
+		5327B1D32F4DA52400BF1465 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 538137462F4D9C270086CAF7 /* SmoothScroll GPT Extension */;
-			targetProxy = 538137492F4D9C270086CAF7 /* PBXContainerItemProxy */;
+			target = 5327B1CF2F4DA52400BF1465 /* SmoothScroll GPT Extension */;
+			targetProxy = 5327B1D22F4DA52400BF1465 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		538137322F4D9C260086CAF7 /* Main.html */ = {
+		5327B1BB2F4DA52400BF1465 /* Main.html */ = {
 			isa = PBXVariantGroup;
 			children = (
-				538137332F4D9C260086CAF7 /* Base */,
+				5327B1BC2F4DA52400BF1465 /* Base */,
 			);
 			name = Main.html;
 			sourceTree = "<group>";
 		};
-		5381373D2F4D9C260086CAF7 /* Main.storyboard */ = {
+		5327B1C62F4DA52400BF1465 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5381373E2F4D9C260086CAF7 /* Base */,
+				5327B1C72F4DA52400BF1465 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5381374F2F4D9C270086CAF7 /* Debug */ = {
+		5327B1D82F4DA52400BF1465 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -384,7 +384,7 @@
 			};
 			name = Debug;
 		};
-		538137502F4D9C270086CAF7 /* Release */ = {
+		5327B1D92F4DA52400BF1465 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -439,7 +439,7 @@
 			};
 			name = Release;
 		};
-		538137522F4D9C270086CAF7 /* Debug */ = {
+		5327B1DB2F4DA52400BF1465 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -473,7 +473,7 @@
 			};
 			name = Debug;
 		};
-		538137532F4D9C270086CAF7 /* Release */ = {
+		5327B1DC2F4DA52400BF1465 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -507,7 +507,7 @@
 			};
 			name = Release;
 		};
-		538137562F4D9C270086CAF7 /* Debug */ = {
+		5327B1DF2F4DA52400BF1465 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -548,7 +548,7 @@
 			};
 			name = Debug;
 		};
-		538137572F4D9C270086CAF7 /* Release */ = {
+		5327B1E02F4DA52400BF1465 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -592,34 +592,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		538137272F4D9C260086CAF7 /* Build configuration list for PBXProject "SmoothScroll GPT" */ = {
+		5327B1B02F4DA52400BF1465 /* Build configuration list for PBXProject "SmoothScroll GPT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5381374F2F4D9C270086CAF7 /* Debug */,
-				538137502F4D9C270086CAF7 /* Release */,
+				5327B1D82F4DA52400BF1465 /* Debug */,
+				5327B1D92F4DA52400BF1465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		538137512F4D9C270086CAF7 /* Build configuration list for PBXNativeTarget "SmoothScroll GPT Extension" */ = {
+		5327B1DA2F4DA52400BF1465 /* Build configuration list for PBXNativeTarget "SmoothScroll GPT Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				538137522F4D9C270086CAF7 /* Debug */,
-				538137532F4D9C270086CAF7 /* Release */,
+				5327B1DB2F4DA52400BF1465 /* Debug */,
+				5327B1DC2F4DA52400BF1465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		538137552F4D9C270086CAF7 /* Build configuration list for PBXNativeTarget "SmoothScroll GPT" */ = {
+		5327B1DE2F4DA52400BF1465 /* Build configuration list for PBXNativeTarget "SmoothScroll GPT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				538137562F4D9C270086CAF7 /* Debug */,
-				538137572F4D9C270086CAF7 /* Release */,
+				5327B1DF2F4DA52400BF1465 /* Debug */,
+				5327B1E02F4DA52400BF1465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 538137242F4D9C260086CAF7 /* Project object */;
+	rootObject = 5327B1AD2F4DA52400BF1465 /* Project object */;
 }

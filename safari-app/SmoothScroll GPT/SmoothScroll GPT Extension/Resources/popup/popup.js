@@ -5,6 +5,7 @@
 
   const nodes = {
     enabled: document.getElementById("enabled"),
+    adaptiveEnabled: document.getElementById("adaptiveEnabled"),
     maxMountedMessages: document.getElementById("maxMountedMessages"),
     overscanCount: document.getElementById("overscanCount"),
     preserveTailCount: document.getElementById("preserveTailCount"),
@@ -24,6 +25,7 @@
   function fillConfig(config) {
     const safe = normalizeConfig(config || DEFAULT_CONFIG);
     nodes.enabled.checked = safe.enabled;
+    nodes.adaptiveEnabled.checked = safe.adaptiveEnabled;
     nodes.maxMountedMessages.value = String(safe.maxMountedMessages);
     nodes.overscanCount.value = String(safe.overscanCount);
     nodes.preserveTailCount.value = String(safe.preserveTailCount);
@@ -33,6 +35,7 @@
   function collectConfig() {
     return normalizeConfig({
       enabled: nodes.enabled.checked,
+      adaptiveEnabled: nodes.adaptiveEnabled.checked,
       maxMountedMessages: Number(nodes.maxMountedMessages.value),
       overscanCount: Number(nodes.overscanCount.value),
       preserveTailCount: Number(nodes.preserveTailCount.value),

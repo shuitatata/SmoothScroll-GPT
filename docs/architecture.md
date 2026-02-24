@@ -19,6 +19,7 @@
 
 ### VirtualizerConfig
 - `enabled: boolean`
+- `adaptiveEnabled: boolean`
 - `maxMountedMessages: number`（0-120）
 - `overscanCount: number`
 - `preserveTailCount: number`
@@ -35,12 +36,19 @@
 - `mountedCount`
 - `trimmedCount`
 - `totalMessageCount`
+- `adaptiveEnabled`
 - `maxMountedMessages`
+- `activeMaxMountedMessages`
+- `activeOverscanCount`
+- `activePreserveTailCount`
 - `desiredKeepCount`
 - `protectedKeepCount`
 - `effectiveKeepCount`
 - `cumulativeTrimOps`
 - `cumulativeRestoreOps`
+- `scrollVelocityPxPerMs`
+- `adaptiveLastReason`
+- `adaptiveLastAdjustAt`
 - `estimatedNodeCount`
 - `avgFrameDeltaMs`
 - `lastError`
@@ -48,9 +56,10 @@
 ## 3. 核心流程
 1. 内容脚本启动后查找对话容器，建立消息记录索引。
 2. 滚动或 DOM 变化触发窗口计算。
-3. 对窗口外消息执行裁剪（替换为占位符），并缓存真实节点。
-4. 占位符进入恢复区间时自动还原真实节点。
-5. 出现异常时触发 fail-open：恢复全部节点并禁用虚拟化。
+3. 若启用自适应调参，根据帧间隔与滚动速度动态调整生效窗口参数。
+4. 对窗口外消息执行裁剪（替换为占位符），并缓存真实节点。
+5. 占位符进入恢复区间时自动还原真实节点。
+6. 出现异常时触发 fail-open：恢复全部节点并禁用虚拟化。
 
 ## 4. 兼容策略
 - 站点匹配：`chatgpt.com` / `chat.openai.com`。
