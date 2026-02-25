@@ -1,14 +1,14 @@
 # SmoothScroll GPT - AGENTS
 
 ## 1. 项目定位
-- 目标：通过 Safari Web Extension 在 ChatGPT 网页端实现消息 DOM 虚拟化，降低超长会话卡顿。
+- 目标：通过浏览器扩展在 ChatGPT 网页端实现消息 DOM 虚拟化，降低超长会话卡顿。
 - 主要收益：提升滚动流畅度，降低主线程压力与内存增长速度。
 - 运行边界：仅在浏览器端执行，不调用 OpenAI API，不修改 ChatGPT 后端。
 
 ## 2. 非目标
 - 不做服务端代理。
 - 不抓取用户对话数据到外部服务。
-- 不追求一次性支持所有浏览器内核；首版仅保障 macOS Safari。
+- 不实现“绕过商店限制的一键安装”；Chrome/Edge 非商店分发使用开发者模式加载。
 
 ## 3. 技术边界与安全原则
 - 仅操作当前页面 DOM 与扩展本地存储（`storage.local`）。
@@ -24,6 +24,7 @@
 - `extension/shared/*`：配置、命令常量、窗口计算等共享逻辑。
 - `docs/*`：架构、路线图、性能基线与变更记录。
 - `scripts/*`：本地构建与最小门禁脚本。
+- `.github/workflows/*`：CI 发布与门禁自动化配置。
 
 ## 5. Git / GitHub 工作流
 - 默认分支：`main`。
@@ -31,6 +32,7 @@
 - 交付方式：功能分支通过 PR 合并到 `main`，避免直接在 `main` 开发功能。
 - 提交粒度：每个可验证增量一个提交。
 - 提交要求：代码与对应文档必须同提交更新。
+- 发布规范：版本使用 `v{package.version}` tag，发布资产由 CI 自动生成。
 
 ## 6. 文档与注释规则
 - 代码注释：中文。
@@ -67,3 +69,8 @@
 - 运行 `npm run gate`。
 - 确认文档已同步。
 - 确认代码注释为中文并且必要、简洁。
+
+## 11. 跨平台发布要求
+- Safari：沿用 `npm run convert:safari` + Xcode 流程。
+- Chrome/Edge：使用 `npm run build:chromium` 与开发者模式加载。
+- GitHub Release 资产：通过 `npm run package:chromium` 生成 zip 与 `SHA256SUMS.txt`。

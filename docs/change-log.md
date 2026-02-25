@@ -26,3 +26,12 @@
 - 扩展状态新增窗口诊断与累计指标：`desiredKeepCount`、`protectedKeepCount`、`effectiveKeepCount`、`cumulativeTrimOps`、`cumulativeRestoreOps`。
 - 实现 Phase F 基础版：新增 `adaptiveEnabled`，运行时根据滚动速度与帧间隔自适应调整生效的窗口参数。
 - 扩展状态新增自适应诊断字段：`activeMaxMountedMessages`、`activeOverscanCount`、`activePreserveTailCount`、`scrollVelocityPxPerMs`、`adaptiveLastReason`、`adaptiveLastAdjustAt`。
+
+## 2026-02-25
+- 将 `codex/phase-f-adaptive-tuning` 合并到 `main`，以主干为基线启动跨平台开发分支。
+- 新增 Chromium 构建脚本：`scripts/build-chromium.mjs`，输出 `dist/chrome/extension` 与 `dist/edge/extension`。
+- 新增 Chromium 打包脚本：`scripts/package-chromium.mjs`，生成双浏览器 zip 与 `SHA256SUMS.txt`。
+- 新增发布版本校验脚本：`scripts/verify-release-tag.mjs`，强校验 tag 与 `package.json.version` 一致。
+- 新增 GitHub Actions 工作流：`.github/workflows/release-chromium.yml`，支持 tag 自动发布 Release 资产。
+- 更新 README 与 AGENTS，补充跨平台构建、安装与发布规范。
+- 新增文档：`docs/install-chromium.md` 与 `docs/release-process.md`。

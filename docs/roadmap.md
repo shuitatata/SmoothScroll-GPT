@@ -7,6 +7,7 @@
 - [x] Phase D：配置与控制（popup/options + storage）
 - [x] Phase E：稳定性加固（fail-open + 重绑定）
 - [x] Phase F：参数自适应调参（根据帧间隔与滚动速度动态调整生效参数）
+- [x] Phase G：跨平台发布链（Chrome/Edge 构建打包 + GitHub Release 自动化）
 
 ## 下一步
 1. 补充更细粒度指标（长任务、输入延迟估算）。

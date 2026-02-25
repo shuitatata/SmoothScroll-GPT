@@ -7,12 +7,15 @@ const requiredPaths = [
   "docs/architecture.md",
   "docs/roadmap.md",
   "docs/change-log.md",
+  "docs/install-chromium.md",
+  "docs/release-process.md",
   "docs/perf-baseline.md",
   "extension/manifest.json",
   "extension/content-script.js",
   "extension/background.js",
   "extension/popup/popup.html",
   "extension/options/options.html",
+  ".github/workflows/release-chromium.yml",
 ];
 
 for (const relativePath of requiredPaths) {
