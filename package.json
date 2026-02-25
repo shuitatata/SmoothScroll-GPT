@@ -10,6 +10,7 @@
     "build": "node scripts/build.mjs",
     "build:chromium": "node scripts/build-chromium.mjs",
     "package:chromium": "node scripts/package-chromium.mjs",
+    "verify:release-tag": "node scripts/verify-release-tag.mjs",
     "release:prepare": "npm run gate && npm run package:chromium",
     "convert:safari": "node scripts/convert-safari.mjs",
     "gate": "npm run check && npm run test && npm run build"
