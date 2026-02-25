@@ -2,7 +2,7 @@
   "name": "smoothscroll-gpt",
   "version": "0.1.0",
   "private": true,
-  "description": "Safari ChatGPT 长对话 DOM 虚拟化扩展",
+  "description": "Safari/Chrome/Edge ChatGPT 长对话 DOM 虚拟化扩展",
   "type": "module",
   "scripts": {
     "check": "node scripts/check.mjs",
@@ -11,7 +11,7 @@
     "build:chromium": "node scripts/build-chromium.mjs",
     "package:chromium": "node scripts/package-chromium.mjs",
     "verify:release-tag": "node scripts/verify-release-tag.mjs",
-    "release:prepare": "npm run gate && npm run package:chromium",
+    "release:prepare": "npm run gate && npm run build:chromium && npm run package:chromium",
     "convert:safari": "node scripts/convert-safari.mjs",
     "gate": "npm run check && npm run test && npm run build"
   }

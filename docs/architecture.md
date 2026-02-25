@@ -70,3 +70,12 @@
 - 宿主工程路径：`/Users/shuitata/PlayGround/SmoothScroll GPT/safari-app/SmoothScroll GPT/SmoothScroll GPT.xcodeproj`。
 - 该工程由 `safari-web-extension-converter` 生成，用于在 macOS Safari 本机运行扩展。
 - 当前采用 `--copy-resources`，工程内 `Resources` 会复制一份扩展代码，后续改动需重新执行转换命令同步。
+
+## 6. Chromium 产物与发布链
+- 构建脚本：`scripts/build-chromium.mjs`
+  - 输出：`dist/chrome/extension`、`dist/edge/extension`
+- 打包脚本：`scripts/package-chromium.mjs`
+  - 输出：`release/smoothscroll-gpt-chrome-v{version}.zip`、`release/smoothscroll-gpt-edge-v{version}.zip`、`release/SHA256SUMS.txt`
+- 自动发布工作流：`.github/workflows/release-chromium.yml`
+  - 触发：`v*` tag
+  - 校验：`verify-release-tag`（tag 与 `package.json.version` 一致）
