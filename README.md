@@ -37,6 +37,10 @@ npm run gate
 5. 打开 Safari -> 设置 -> 扩展，启用 `SmoothScroll GPT Extension`。
 6. 访问 ChatGPT 页面，点击扩展弹窗调整参数并观察 `mounted/trimmed` 状态。
 
+说明：
+- `safari-app` 为本地生成目录，不纳入 Git 跟踪。
+- 拉取仓库后如需 Safari 调试，请先执行一次 `npm run convert:safari`。
+
 ## Chrome / Edge 体验方式（开发者模式）
 1. 运行 `npm run build:chromium`。
 2. Chrome 打开 `chrome://extensions`，Edge 打开 `edge://extensions`。

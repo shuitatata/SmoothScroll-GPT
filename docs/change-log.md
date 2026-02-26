@@ -35,3 +35,5 @@
 - 新增 GitHub Actions 工作流：`.github/workflows/release-chromium.yml`，支持 tag 自动发布 Release 资产。
 - 更新 README 与 AGENTS，补充跨平台构建、安装与发布规范。
 - 新增文档：`docs/install-chromium.md` 与 `docs/release-process.md`。
+- 调整 Safari 工程版本控制策略：`safari-app` 改为本地生成目录，不再纳入 Git 跟踪。
+- 更新 `.gitignore` 与相关文档，明确 Safari 调试前需本地执行 `npm run convert:safari`。

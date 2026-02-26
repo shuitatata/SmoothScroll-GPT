@@ -25,6 +25,7 @@
 - `docs/*`：架构、路线图、性能基线与变更记录。
 - `scripts/*`：本地构建与最小门禁脚本。
 - `.github/workflows/*`：CI 发布与门禁自动化配置。
+- `safari-app/*`：Safari 本地调试工程，由 `npm run convert:safari` 生成，不纳入 Git 跟踪。
 
 ## 5. Git / GitHub 工作流
 - 默认分支：`main`。
@@ -71,6 +72,6 @@
 - 确认代码注释为中文并且必要、简洁。
 
 ## 11. 跨平台发布要求
-- Safari：沿用 `npm run convert:safari` + Xcode 流程。
+- Safari：沿用 `npm run convert:safari` + Xcode 流程，`safari-app` 目录为本地生成产物。
 - Chrome/Edge：使用 `npm run build:chromium` 与开发者模式加载。
 - GitHub Release 资产：通过 `npm run package:chromium` 生成 zip 与 `SHA256SUMS.txt`。

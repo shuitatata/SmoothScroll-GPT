@@ -70,6 +70,7 @@
 - 宿主工程路径：`/Users/shuitata/PlayGround/SmoothScroll GPT/safari-app/SmoothScroll GPT/SmoothScroll GPT.xcodeproj`。
 - 该工程由 `safari-web-extension-converter` 生成，用于在 macOS Safari 本机运行扩展。
 - 当前采用 `--copy-resources`，工程内 `Resources` 会复制一份扩展代码，后续改动需重新执行转换命令同步。
+- `safari-app` 目录定位为本地生成产物，不纳入仓库版本控制。
 
 ## 6. Chromium 产物与发布链
 - 构建脚本：`scripts/build-chromium.mjs`
